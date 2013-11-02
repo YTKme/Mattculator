@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mattculator</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- TextView -->
+    <string name="tv_bill_subtotal">Bill (Subtotal)</string>
+    <string name="tv_tip">Tip</string>
+    <string name="tv_tax">Tax</string>
+    <string name="tv_people">People</string>
+    <string name="tv_bill_after_tax">Bill (After Tax)</string>
+    <string name="tv_bill_after_tip">Bill (After Tip)</string>
+    <string name="tv_bill_after_tip_tax">Bill (After Tip &amp; Tax)</string>
+    <string name="tv_bill_even_split">Bill (Even Split)</string>
+    <string name="tv_tip_total">Tip (Total)</string>
+    <string name="tv_tip_split">Tip (Split)</string>
+    
+    <!-- Edit Text -->
+    <string name="et_bill_subtotal">0.00</string>
+    <string name="et_tip">15</string>
+    <string name="et_tax">8.75</string>
+    <string name="et_people">1</string>
+    <string name="et_bill_after_tax">0.00</string>
+    <string name="et_bill_after_tip">0.00</string>
+    <string name="et_bill_after_tip_tax">0.00</string>
+    <string name="et_bill_even_split">0.00</string>
+    <string name="et_tip_total">0.00</string>
+    <string name="et_tip_split">0.00</string>
+    
+    <!-- Miscellaneous -->
+    <string name="tv_percent_sign">%</string>
+
+</resources>

@@ -1,0 +1,246 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Mattculator" >
+
+    <EditText
+        android:id="@+id/etBillSubtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:ems="5"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="@string/et_bill_subtotal" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tvBillSubtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etBillSubtotal"
+        android:layout_alignBottom="@+id/etBillSubtotal"
+        android:layout_alignParentLeft="true"
+        android:text="@string/tv_bill_subtotal" />
+
+    <EditText
+        android:id="@+id/etPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/etTax"
+        android:ems="5"
+        android:inputType="number"
+        android:selectAllOnFocus="true"
+        android:text="@string/et_people" />
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etTip"
+        android:layout_alignBottom="@+id/etTip"
+        android:layout_alignLeft="@+id/tvBillSubtotal"
+        android:text="@string/tv_tip" />
+
+    <TextView
+        android:id="@+id/tvTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etTax"
+        android:layout_alignBottom="@+id/etTax"
+        android:layout_alignLeft="@+id/tvTip"
+        android:text="@string/tv_tax" />
+
+    <EditText
+        android:id="@+id/etTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etBillSubtotal"
+        android:layout_below="@+id/etBillSubtotal"
+        android:ems="4"
+        android:inputType="number|numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="@string/et_tip" >
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/etTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etBillSubtotal"
+        android:layout_below="@+id/etTip"
+        android:ems="4"
+        android:inputType="number|numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="@string/et_tax" />
+
+    <TextView
+        android:id="@+id/tvTipPercentSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etTip"
+        android:layout_alignBottom="@+id/etTip"
+        android:layout_alignParentRight="true"
+        android:text="@string/tv_percent_sign" />
+
+    <TextView
+        android:id="@+id/tvTaxPercentSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etTax"
+        android:layout_alignBottom="@+id/etTax"
+        android:layout_alignParentRight="true"
+        android:text="@string/tv_percent_sign" />
+
+    <TextView
+        android:id="@+id/tvPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etPeople"
+        android:layout_alignBottom="@+id/etPeople"
+        android:layout_alignParentLeft="true"
+        android:text="@string/tv_people" />
+
+    <TextView
+        android:id="@+id/tvBillAfterTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etBillAfterTip"
+        android:layout_alignBottom="@+id/etBillAfterTip"
+        android:layout_alignParentLeft="true"
+        android:text="@string/tv_bill_after_tip" />
+
+    <TextView
+        android:id="@+id/tvBillAfterTipTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etBillAfterTipTax"
+        android:layout_alignBottom="@+id/etBillAfterTipTax"
+        android:layout_alignParentLeft="true"
+        android:text="@string/tv_bill_after_tip_tax" />
+
+    <TextView
+        android:id="@+id/tvBillEvenSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etBillEvenSplit"
+        android:layout_alignBottom="@+id/etBillEvenSplit"
+        android:layout_alignParentLeft="true"
+        android:text="@string/tv_bill_even_split" />
+
+    <TextView
+        android:id="@+id/tvTipTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etTipTotal"
+        android:layout_alignBottom="@+id/etTipTotal"
+        android:layout_alignParentLeft="true"
+        android:text="@string/tv_tip_total" />
+
+    <TextView
+        android:id="@+id/tvTipSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etTipSplit"
+        android:layout_alignBottom="@+id/etTipSplit"
+        android:layout_alignParentLeft="true"
+        android:text="@string/tv_tip_split" />
+
+    <EditText
+        android:id="@+id/etBillAfterTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/etPeople"
+        android:ems="5"
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal"
+        android:text="@string/et_bill_after_tax" />
+
+    <TextView
+        android:id="@+id/tvBillAfterTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etBillAfterTax"
+        android:layout_alignBottom="@+id/etBillAfterTax"
+        android:layout_alignParentLeft="true"
+        android:text="@string/tv_bill_after_tax" />
+
+    <EditText
+        android:id="@+id/etBillAfterTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etBillAfterTax"
+        android:layout_below="@+id/etBillAfterTax"
+        android:ems="5"
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal"
+        android:text="@string/et_bill_after_tip" />
+
+    <EditText
+        android:id="@+id/etBillAfterTipTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etBillAfterTip"
+        android:layout_below="@+id/etBillAfterTip"
+        android:ems="5"
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal"
+        android:text="@string/et_bill_after_tip_tax" />
+
+    <EditText
+        android:id="@+id/etBillEvenSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etBillAfterTipTax"
+        android:layout_below="@+id/etBillAfterTipTax"
+        android:ems="5"
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal"
+        android:text="@string/et_bill_even_split" />
+
+    <EditText
+        android:id="@+id/etTipTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etBillEvenSplit"
+        android:layout_below="@+id/etBillEvenSplit"
+        android:ems="5"
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal"
+        android:text="@string/et_tip_total" />
+
+    <EditText
+        android:id="@+id/etTipSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etTipTotal"
+        android:layout_below="@+id/etTipTotal"
+        android:ems="5"
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal"
+        android:text="@string/et_tip_split" />
+
+</RelativeLayout>
