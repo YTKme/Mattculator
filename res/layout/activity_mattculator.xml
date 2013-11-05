@@ -121,13 +121,13 @@
         android:text="@string/tv_bill_after_tip" />
 
     <TextView
-        android:id="@+id/tvBillAfterTipTax"
+        android:id="@+id/tvBillAfterTaxTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/etBillAfterTipTax"
-        android:layout_alignBottom="@+id/etBillAfterTipTax"
+        android:layout_alignBaseline="@+id/etBillAfterTaxTip"
+        android:layout_alignBottom="@+id/etBillAfterTaxTip"
         android:layout_alignParentLeft="true"
-        android:text="@string/tv_bill_after_tip_tax" />
+        android:text="@string/tv_bill_after_tax_tip" />
 
     <TextView
         android:id="@+id/tvBillEvenSplit"
@@ -192,7 +192,7 @@
         android:text="@string/et_bill_after_tip" />
 
     <EditText
-        android:id="@+id/etBillAfterTipTax"
+        android:id="@+id/etBillAfterTaxTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/etBillAfterTip"
@@ -202,14 +202,14 @@
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:inputType="numberDecimal"
-        android:text="@string/et_bill_after_tip_tax" />
+        android:text="@string/et_bill_after_tax_tip" />
 
     <EditText
         android:id="@+id/etBillEvenSplit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/etBillAfterTipTax"
-        android:layout_below="@+id/etBillAfterTipTax"
+        android:layout_alignLeft="@+id/etBillAfterTaxTip"
+        android:layout_below="@+id/etBillAfterTaxTip"
         android:ems="5"
         android:enabled="false"
         android:focusable="false"

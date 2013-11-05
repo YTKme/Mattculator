@@ -11,7 +11,7 @@
     <string name="tv_people">People</string>
     <string name="tv_bill_after_tax">Bill (After Tax)</string>
     <string name="tv_bill_after_tip">Bill (After Tip)</string>
-    <string name="tv_bill_after_tip_tax">Bill (After Tip &amp; Tax)</string>
+    <string name="tv_bill_after_tax_tip">Bill (After Tax &amp; Tip)</string>
     <string name="tv_bill_even_split">Bill (Even Split)</string>
     <string name="tv_tip_total">Tip (Total)</string>
     <string name="tv_tip_split">Tip (Split)</string>
@@ -23,7 +23,7 @@
     <string name="et_people">1</string>
     <string name="et_bill_after_tax">0.00</string>
     <string name="et_bill_after_tip">0.00</string>
-    <string name="et_bill_after_tip_tax">0.00</string>
+    <string name="et_bill_after_tax_tip">0.00</string>
     <string name="et_bill_even_split">0.00</string>
     <string name="et_tip_total">0.00</string>
     <string name="et_tip_split">0.00</string>

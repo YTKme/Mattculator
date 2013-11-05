@@ -19,7 +19,7 @@ public class Mattculator extends Activity {
 	private static final String PEOPLE = "PEOPLE";
 	private static final String BILL_AFTER_TAX = "BILL_AFTER_TAX";
 	private static final String BILL_AFTER_TIP = "BILL_AFTER_TIP";
-	private static final String BILL_AFTER_TIP_TAX = "BILL_AFTER_TIP_TAX";
+	private static final String BILL_AFTER_TAX_TIP = "BILL_AFTER_TIP_TAX";
 	private static final String BILL_EVEN_SPLIT = "BILL_EVEN_SPLIT";
 	private static final String TIP_TOTAL = "TIP_TOTAL";
 	private static final String TIP_SPLIT = "TIP_SPLIT";
@@ -31,7 +31,7 @@ public class Mattculator extends Activity {
 	private Integer people;
 	private BigDecimal billAfterTax;
 	private BigDecimal billAfterTip;
-	private BigDecimal billAfterTipTax;
+	private BigDecimal billAfterTaxTip;
 	private BigDecimal billEvenSplit;
 	private BigDecimal tipTotal;
 	private BigDecimal tipSplit;
@@ -42,7 +42,7 @@ public class Mattculator extends Activity {
 	EditText etPeople;
 	EditText etBillAfterTax;
 	EditText etBillAfterTip;
-	EditText etBillAfterTipTax;
+	EditText etBillAfterTaxTip;
 	EditText etBillEvenSplit;
 	EditText etTipTotal;
 	EditText etTipSplit;
@@ -61,7 +61,7 @@ public class Mattculator extends Activity {
 			people = 1;
 			billAfterTax = new BigDecimal(0);
 			billAfterTip = new BigDecimal(0);
-			billAfterTipTax = new BigDecimal(0);
+			billAfterTaxTip = new BigDecimal(0);
 			billEvenSplit = new BigDecimal(0);
 			tipTotal = new BigDecimal(0);
 			tipSplit = new BigDecimal(0);
@@ -73,8 +73,8 @@ public class Mattculator extends Activity {
 			people = savedInstanceState.getInt(PEOPLE);
 			billAfterTax = (BigDecimal) savedInstanceState.get(BILL_AFTER_TAX);
 			billAfterTip = (BigDecimal) savedInstanceState.get(BILL_AFTER_TIP);
-			billAfterTipTax = (BigDecimal) savedInstanceState
-					.get(BILL_AFTER_TIP_TAX);
+			billAfterTaxTip = (BigDecimal) savedInstanceState
+					.get(BILL_AFTER_TAX_TIP);
 			tipTotal = (BigDecimal) savedInstanceState.get(TIP_TOTAL);
 			tipSplit = (BigDecimal) savedInstanceState.get(TIP_SPLIT);
 		}
@@ -85,7 +85,7 @@ public class Mattculator extends Activity {
 		etPeople = (EditText) findViewById(R.id.etPeople);
 		etBillAfterTax = (EditText) findViewById(R.id.etBillAfterTax);
 		etBillAfterTip = (EditText) findViewById(R.id.etBillAfterTip);
-		etBillAfterTipTax = (EditText) findViewById(R.id.etBillAfterTipTax);
+		etBillAfterTaxTip = (EditText) findViewById(R.id.etBillAfterTaxTip);
 		etBillEvenSplit = (EditText) findViewById(R.id.etBillEvenSplit);
 		etTipTotal = (EditText) findViewById(R.id.etTipTotal);
 		etTipSplit = (EditText) findViewById(R.id.etTipSplit);
@@ -204,6 +204,22 @@ public class Mattculator extends Activity {
 	}
 
 	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		
+		outState.putSerializable(BILL_SUBTOTAL, billSubtotal);
+		outState.putSerializable(TIP, tip);
+		outState.putSerializable(TAX, tax);
+		outState.putSerializable(PEOPLE, people);
+		outState.putSerializable(BILL_AFTER_TAX, billAfterTax);
+		outState.putSerializable(BILL_AFTER_TIP, billAfterTip);
+		outState.putSerializable(BILL_AFTER_TAX_TIP, billAfterTaxTip);
+		outState.putSerializable(BILL_EVEN_SPLIT, billEvenSplit);
+		outState.putSerializable(TIP_TOTAL, tipTotal);
+		outState.putSerializable(TIP_SPLIT, tipSplit);
+	}
+
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.mattculator, menu);
@@ -240,17 +256,17 @@ public class Mattculator extends Activity {
 		billAfterTip = billSubtotal.add(tipTotal);
 
 		// Calculate bill after tip and tax
-		billAfterTipTax = billSubtotal.add(
+		billAfterTaxTip = billSubtotal.add(
 				billSubtotal.multiply(tax.divide(new BigDecimal(100)))).add(
 				tipTotal);
 
 		// Calculate bill even split
-		billEvenSplit = billAfterTipTax.divide(new BigDecimal(people));
+		billEvenSplit = billAfterTaxTip.divide(new BigDecimal(people));
 
 		// Display updated bill information
 		etBillAfterTax.setText(String.format("%.02f", billAfterTax));
 		etBillAfterTip.setText(String.format("%.02f", billAfterTip));
-		etBillAfterTipTax.setText(String.format("%.02f", billAfterTipTax));
+		etBillAfterTaxTip.setText(String.format("%.02f", billAfterTaxTip));
 		etBillEvenSplit.setText(String.format("%.02f", billEvenSplit));
 		etTipTotal.setText(String.format("%.02f", tipTotal));
 		etTipSplit.setText(String.format("%.02f", tipSplit));
